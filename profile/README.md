@@ -77,6 +77,7 @@
 
     ## Instalar bibliotecas do arquivo "requirements.txt":
     pip install -r requirements.txt
+</details>
 
 ### VivoCorp
 👉 https://github.com/Automation-Vivo/rpa-vivocorp
