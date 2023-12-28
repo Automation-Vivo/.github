@@ -62,7 +62,7 @@
 </details>
 
 <details>
-    <summary><h3>🦊​ Venv commands</h3></summary>
+    <summary><h3>📚​ Python venv comandos </h3></summary>
     Antes de criar sua venv lembresse de deixala fora do projeto ou adicione-a ao seu gitignore para que não suba esses arquivo para o Git.
 
     ## Criar venv:
@@ -82,7 +82,7 @@
 👉 https://github.com/Automation-Vivo/rpa-vivocorp
 
 
-### Modo desenvolvimento VivoCorp
+### Modo de desenvolvimento e testes do VivoCorp
 👉 https://github.com/Automation-Vivo/VIVOCORP_DEVMODE
 
 
