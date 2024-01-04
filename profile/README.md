@@ -79,7 +79,7 @@
     pip install -r requirements.txt
 </details>
 <details>
-    <summary><h3>🛠️​​ Funções Genericas </h3></summary>
+    <summary><h3>🛠️​​ Funções Genéricas </h3></summary>
     """
   
       def deep_search(driver, tag, nome, show=False):
