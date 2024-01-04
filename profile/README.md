@@ -78,6 +78,65 @@
     ## Instalar bibliotecas do arquivo "requirements.txt":
     pip install -r requirements.txt
 </details>
+<details>
+    <summary><h3>🛠️​​ Funções Genericas </h3></summary>
+    """
+  
+      def deep_search(driver, tag, nome, show=False):
+          
+          list_elements = driver.find_elements(By.TAG_NAME, tag)
+          for line in list_elements:
+              try:
+                  text_line = line.text
+                  if show == True:
+                      print(text_line)
+              except Exception as e:
+                  print('erro: ', e)
+              if nome == text_line:
+                  line.click(),sleep(3)
+                  break
+              
+          return line
+      
+      def count_lines_table(driver, NTable):
+          thead = driver.find_elements(By.TAG_NAME, 'thead')[NTable].find_element(By.XPATH, './parent::table/parent::div/parent::div/parent::div')
+          nlinhas= len(thead.find_elements(By.TAG_NAME, 'tr')) -2 
+          return nlinhas
+      
+      def search_cell(driver, NTable:int, Nrow, NColumn):
+          thead = driver.find_elements(By.TAG_NAME, 'thead')[NTable].find_element(By.XPATH, './parent::table/parent::div/parent::div/parent::div')
+          tbody = thead.find_elements(By.TAG_NAME,'tbody')[0].find_elements(By.TAG_NAME,'tr')[Nrow].find_elements(By.TAG_NAME,'td')[NColumn]
+      
+          return tbody
+      
+      def checked_icon(driver,Ntable, Column):
+          lista_checados = []
+          nlinhas = count_lines_table(driver, Ntable) + 1
+          for _ in range(nlinhas):
+              print(_)
+              sleep(3)
+              try:
+                  ischeck = search_cell(driver, Ntable, _, Column).find_element(By.XPATH,'img').get_attribute('src').split("/")[-1]
+                  print(ischeck,"HDGVJBFVFHJVBD")
+                  if ischeck == 'check_d.gif':
+                      sleep(3)
+                      Column_NS = search_cell(driver, Ntable, _, 20).text
+                      lista_checados.append(Column_NS)
+              except Exception as e:
+                  print('Image check not found',e)
+                  
+          return lista_checados
+      
+      def ordenamento_checked_icons(Column_EnviadoAtlys, Column_AtualizadoAtlys):
+          sorting = []
+      
+          for _ in Column_EnviadoAtlys:
+              if _ in Column_AtualizadoAtlys:
+                  sorting.append(_)
+          print(sorting)
+          return sorting    
+  """
+</details>
 
 ### VivoCorp
 👉 https://github.com/Automation-Vivo/rpa-vivocorp
