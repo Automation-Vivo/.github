@@ -138,11 +138,3 @@
   """
 </details>
 
-### VivoCorp
-👉 https://github.com/Automation-Vivo/rpa-vivocorp
-
-
-### Modo de desenvolvimento e testes do VivoCorp
-👉 https://github.com/Automation-Vivo/VIVOCORP_DEVMODE
-
-
